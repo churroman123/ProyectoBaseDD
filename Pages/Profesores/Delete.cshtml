@@ -1,0 +1,46 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Profesores.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h3>Estas seguro de elimar esto?</h3>
+<div>
+    <h4>Profesores</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Profesore.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Profesore.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Profesore.GradAcadem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Profesore.GradAcadem)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Profesore.Sueldo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Profesore.Sueldo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Profesore.DeptoNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Profesore.DeptoNavigation.CveCarrera)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Profesore.IdProfesores" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Regresar</a>
+    </form>
+</div>

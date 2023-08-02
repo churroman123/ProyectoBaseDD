@@ -1,0 +1,37 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Carreras.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Carrera</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carrera.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+           Cve. Carrera
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.CveCarrera)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carrera.Creditos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.Creditos)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Carrera?.CveCarrera" class="btn btn-secundary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-primary">Regresar</a>
+</div>

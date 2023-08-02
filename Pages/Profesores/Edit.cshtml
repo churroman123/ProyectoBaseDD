@@ -1,0 +1,57 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Profesores.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Profesores</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Profesore.IdProfesores" />
+            <div class="form-group">
+                <label asp-for="Profesore.Nombre" class="control-label"></label>
+                <input asp-for="Profesore.Nombre" class="form-control" />
+                <span asp-validation-for="Profesore.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profesore.IdProfesores" class="control-label"></label>
+                <input asp-for="Profesore.IdProfesores" class="form-control" asp-items="ViewBag.Depto"></input>
+                <span asp-validation-for="Profesore.IdProfesores" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profesore.Depto" class="control-label"></label>
+                <select asp-for="Profesore.Depto" class="form-control" asp-items="ViewBag.Depto"></select>
+                <span asp-validation-for="Profesore.Depto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profesore.GradAcadem" class="control-label"></label>
+                <input asp-for="Profesore.GradAcadem" class="form-control" />
+                <span asp-validation-for="Profesore.GradAcadem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profesore.Sueldo" class="control-label"></label>
+                <input asp-for="Profesore.Sueldo" class="form-control" />
+                <span asp-validation-for="Profesore.Sueldo" class="text-danger"></span>
+            </div>
+            <input asp-for="Profesore.DeptoNavigation.Nombre" class="form-control" readonly />
+            <input asp-for="Profesore.DeptoNavigation.CveCarrera" class="form-control" readonly />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

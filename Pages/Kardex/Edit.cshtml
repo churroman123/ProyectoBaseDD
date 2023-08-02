@@ -1,0 +1,50 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Kardex.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Kardex</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Kardex.IdKardex" />
+            <div class="form-group">
+                <label asp-for="Kardex.CveAsig" class="control-label"></label>
+                <select asp-for="Kardex.CveAsig" class="form-control" asp-items="ViewBag.CveAsig"></select>
+                <span asp-validation-for="Kardex.CveAsig" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kardex.Calificacion" class="control-label"></label>
+                <input asp-for="Kardex.Calificacion" class="form-control" />
+                <span asp-validation-for="Kardex.Calificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kardex.TipoEval" class="control-label"></label>
+                <input asp-for="Kardex.TipoEval" class="form-control" />
+                <span asp-validation-for="Kardex.TipoEval" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kardex.Ncontrol" class="control-label"></label>
+                <select asp-for="Kardex.Ncontrol" class="form-control" asp-items="ViewBag.Ncontrol"></select>
+                <span asp-validation-for="Kardex.Ncontrol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

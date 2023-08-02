@@ -1,0 +1,54 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Kardex.IndexModel
+
+@{
+    ViewData["Title"] = "Kardex";
+}
+
+<h1>Kardex</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Agregar Kardex</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kardex[0].Calificacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kardex[0].TipoEval)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kardex[0].CveAsigNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kardex[0].NcontrolNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Kardex) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoEval)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CveAsigNavigation.CveAsig)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NcontrolNavigation.Ncontrol)
+            </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdKardex" class="btn btn-primary">Editar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.IdKardex" class="btn btn-secundary">Detalles</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.IdKardex" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Bitacora.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Bitacora</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.Fecha)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.Fecha)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.Operacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.Operacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.ObjInfo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.ObjInfo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.Valores)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.Valores)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.ValorAnterior)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.ValorAnterior)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.ValorNuevo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.ValorNuevo)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Bitacora.IdBitacora" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

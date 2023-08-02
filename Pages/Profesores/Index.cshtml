@@ -1,0 +1,54 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Profesores.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Profesores</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Agregar Profesor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesore[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesore[0].GradAcadem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesore[0].Sueldo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesore[0].DeptoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Profesore) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradAcadem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sueldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeptoNavigation.CveCarrera)
+            </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdProfesores" class="btn btn-primary">Editar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.IdProfesores" class="btn btn-secundary">Detalles</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.IdProfesores" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

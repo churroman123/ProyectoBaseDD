@@ -1,0 +1,44 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Carreras.CreateModel
+
+@{
+    ViewData["Title"] = "Agregar";
+}
+
+<h1>Agregar Carrera</h1>
+
+<h4>Carrera</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Carrera.CveCarrera" class="control-label"></label>
+                <input asp-for="Carrera.CveCarrera" class="form-control" />
+                <span asp-validation-for="Carrera.CveCarrera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrera.Nombre" class="control-label"></label>
+                <input asp-for="Carrera.Nombre" class="form-control" />
+                <span asp-validation-for="Carrera.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrera.Creditos" class="control-label"></label>
+                <input asp-for="Carrera.Creditos" class="form-control" />
+                <span asp-validation-for="Carrera.Creditos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index" class="btn btn-secundary">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

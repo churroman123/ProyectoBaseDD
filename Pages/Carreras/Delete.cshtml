@@ -1,0 +1,40 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Carreras.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h3>Estas seguro de elimar esto?</h3>
+<div>
+    <h4>Carrera</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+           Nombre
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            Cve. Carrera
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.CveCarrera)
+        </dd>
+        <dt class="col-sm-2">
+            Creditos
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carrera.Creditos)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Carrera.CveCarrera" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index" class="btn btn-primary">Regresar</a>
+    </form>
+</div>

@@ -1,0 +1,60 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Horario.IndexModel
+
+@{
+    ViewData["Title"] = "Horarios";
+}
+
+<h1>Horarios</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Agregar Horario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario[0].Grupo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario[0].Horario1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario[0].Aula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario[0].CveAsigNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario[0].IdProfesorNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Horario) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Horario1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CveAsigNavigation.CveAsig)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProfesor)
+            </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CveAsig" class="btn btn-primary">Editar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.CveAsig" class="btn btn-secundary">Detalles</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CveAsig" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

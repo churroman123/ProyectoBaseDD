@@ -1,0 +1,63 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Bitacora.IndexModel
+
+@{
+    ViewData["Title"] = "Bitacora";
+}
+
+<h1>Bitacora</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Operacion
+            </th>
+            <th>
+                Objeto de informacion
+            </th>
+            <th>
+               Valores
+            </th>
+            <th>
+                Valor anterior
+            </th>
+            <th>
+               Valor Nuevo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Bitacora) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObjInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valores)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorAnterior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorNuevo)
+            </td>
+            <td>
+                    <a asp-page="./Details" asp-route-id="@item.IdBitacora" class="btn btn-secundary">Detalles</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.IdBitacora" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

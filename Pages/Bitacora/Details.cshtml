@@ -1,0 +1,55 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Bitacora.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Bitacora</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.Fecha)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.Fecha)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.Operacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.Operacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.ObjInfo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.ObjInfo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.Valores)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.Valores)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.ValorAnterior)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.ValorAnterior)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bitacora.ValorNuevo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bitacora.ValorNuevo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Bitacora?.IdBitacora">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

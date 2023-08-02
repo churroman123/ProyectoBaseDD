@@ -1,0 +1,42 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Prerequisitos.IndexModel
+
+@{
+    ViewData["Title"] = "prerequisitos";
+}
+
+<h1>Prerequisitos</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Agregar Prerequisito</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cve. Asignatura
+            </th>
+            <th>
+                ID. Kardex
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Prerequisito) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CveAsig)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdKardex)
+            </td>
+            <td>
+                        <a asp-page="./Edit" asp-route-id="@item.IdPrerequisitos" class="btn btn-primary">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.IdPrerequisitos" class="btn btn-secundary">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.IdPrerequisitos" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

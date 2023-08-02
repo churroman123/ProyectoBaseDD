@@ -1,0 +1,49 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Estudiantes.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles Alumno</h1>
+
+<div>
+    <h4>Estudiante</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estudiante.Ncontrol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estudiante.Ncontrol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estudiante.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estudiante.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estudiante.Semestre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estudiante.Semestre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estudiante.Apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estudiante.Apellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estudiante.CveCarreraNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estudiante.CveCarrera)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Estudiante?.Ncontrol">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
+</div>

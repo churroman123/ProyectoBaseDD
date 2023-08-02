@@ -1,0 +1,31 @@
+﻿@page
+@model ProyectoBaseDD.Pages.Prerequisitos.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Prerequisito</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prerequisito.CveAsigNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prerequisito.CveAsig)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Prerequisito.IdKardexNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prerequisito.IdKardex)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Prerequisito?.IdPrerequisitos">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
+</div>
